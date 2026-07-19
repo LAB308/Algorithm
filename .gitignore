@@ -11,4 +11,4 @@ out/
 build
 
 blog
-
+.env
