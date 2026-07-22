@@ -2,22 +2,34 @@ package 프로그래머스._20260719;
 
 public class 타겟넘버_43165 {
 
-    private static boolean[] VISITED;
+    public static void main(String[] args) {
 
-    public static void main() {
+        int[] numbers = {4, 1, 2, 1};
+        int target = 4;
 
-        int[] numbers = {1, 1, 1, 1, 1};
-        int target = 3;
-
-        solution(numbers, target);
+        System.out.println(solution(numbers, target));
     }
 
     public static int solution(int[] numbers, int target) {
-        int answer = 0;
-        VISITED = new boolean[numbers.length];
+        int idx = 0;
+        int sum = 0;
 
-
-
-        return answer;
+        return dfs(numbers, target, idx, sum);
     }
+
+    private static int dfs(int[] numbers, int target, int idx, int sum) {
+
+        if( idx == numbers.length ) {
+            if( sum == target ) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        return dfs(numbers, target, idx + 1, sum + numbers[idx])
+                + dfs(numbers, target, idx + 1, sum - numbers[idx]);
+
+    }
+
 }
