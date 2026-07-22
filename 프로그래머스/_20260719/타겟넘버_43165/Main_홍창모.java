@@ -1,6 +1,6 @@
-package 프로그래머스._20260719;
+package 프로그래머스._20260719.타겟넘버_43165;
 
-public class 타겟넘버_43165 {
+public class Main_홍창모 {
 
     public static void main(String[] args) {
 
